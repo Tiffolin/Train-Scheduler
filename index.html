@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<title>Train SChedule</title>
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+</head>
+
+<body>
+
+<!-- Firebase Reference -->
+<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Displayed Train Schedule -->
+<table id="displayed-data">
+  <tr>
+    <th>Train Name</th>
+    <th>Destination</th>
+    <th>First Train (HH:mm)</th>
+    <th>Frequency (min)</th>
+  </tr>
+
+
+  <!-- submit form -->
+  <label for="trainName">Train Name</label>
+  <input class="form-control" id="trainName" type="text">
+  <label for="age-input">Desination</label>
+  <input class="form-control" id="destination" type="text">
+  <label for="firstTrain">First Train Time (HH:mm - military time)</label>
+  <input class="form-control" id="firstTrain" type="text">
+  <label for="frequency">Frequency (min)</label>
+  <input class="form-control" id="frequency" type="text">
+
+
+  <button id="addTrain" type="submit">Submit</button>
+  <!-- Fireebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA0Y4_6aGQkV96UFtJJZq_vRsEWg2fVIaM",
+      authDomain: "train-schedule-f6e2f.firebaseapp.com",
+      databaseURL: "https://train-schedule-f6e2f.firebaseio.com",
+      projectId: "train-schedule-f6e2f",
+      storageBucket: "train-schedule-f6e2f.appspot.com",
+      messagingSenderId: "895592244424"
+    };
+    firebase.initializeApp(config);
+  </script>
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Added JS file -->
+<script src="logic.js"></script>
+<!-- Added Moment JS -->
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+
+</body>
+
+</html>
