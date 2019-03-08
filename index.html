@@ -2,57 +2,45 @@
 <html lang="en-us">
 <head>
 <meta charset="UTF-8">
-<title>Train SChedule</title>
-<style>
-    table {
-      font-family: arial, sans-serif;
-      border-collapse: collapse;
-      width: 100%;
-    }
-    
-    td, th {
-      border: 1px solid #dddddd;
-      text-align: left;
-      padding: 8px;
-    }
-    
-    tr:nth-child(even) {
-      background-color: #dddddd;
-    }
-    </style>
-</head>
-
-<body>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- CSS -->
+<link rel="stylesheet" href="style.css">
 <!-- Firebase Reference -->
 <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
-
+<title>Train SChedule</title>
 </head>
 
 <body>
 
+<div id="timeNow" class="main">
+  
+</div>
+
   <!-- Displayed Train Schedule -->
-<table id="displayed-data">
+<table id="displayed-data" class= "main">
   <tr>
     <th>Train Name</th>
     <th>Destination</th>
     <th>First Train (HH:mm)</th>
     <th>Frequency (min)</th>
+    <th>Current Time (HH:mm)</th>
+    <th>Next Train (HH:mm)</th>
   </tr>
 
 
   <!-- submit form -->
-  <label for="trainName">Train Name</label>
-  <input class="form-control" id="trainName" type="text">
-  <label for="age-input">Desination</label>
-  <input class="form-control" id="destination" type="text">
-  <label for="firstTrain">First Train Time (HH:mm - military time)</label>
-  <input class="form-control" id="firstTrain" type="text">
-  <label for="frequency">Frequency (min)</label>
-  <input class="form-control" id="frequency" type="text">
-
+  <div class="sidenav">
+  <label class="sidenav" for="trainName">Train Name</label>
+  <input class="form-control sidenav" id="trainName" type="text">
+  <label class="sidenav" for="age-input">Desination</label>
+  <input class="form-control sidenav" id="destination" type="text">
+  <label class="sidenav" for="firstTrain">First Train Time (HH:mm)</label>
+  <input class="form-control sidenav" id="firstTrain" type="text">
+  <label class="sidenav" for="frequency">Frequency (min)</label>
+  <input class="form-control sidenav" id="frequency" type="text">
 
   <button id="addTrain" type="submit">Submit</button>
+  </div>
   <!-- Fireebase -->
   <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
   <script>
@@ -67,12 +55,12 @@
     };
     firebase.initializeApp(config);
   </script>
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 <!-- jQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Added JS file -->
 <script src="logic.js"></script>
 <!-- Added Moment JS -->
-<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
 
 </body>
